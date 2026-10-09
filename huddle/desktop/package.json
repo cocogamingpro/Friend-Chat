@@ -1,0 +1,22 @@
+{
+  "name": "huddle-desktop",
+  "version": "1.0.0",
+  "description": "Huddle desktop app",
+  "author": "Huddle",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.huddle.desktop",
+    "productName": "Huddle",
+    "files": ["main.js", "icon.png", "app-url.txt"],
+    "win": { "target": "nsis", "icon": "icon.png" },
+    "nsis": { "oneClick": true, "perMachine": false, "artifactName": "Huddle-Setup.exe" }
+  }
+}
